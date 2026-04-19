@@ -1,0 +1,259 @@
+/* aiCenter.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.aic-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0ede6 0%, #e8f0ea 40%, #f5ede0 80%, #fdf0e0 100%);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── NAVBAR ── */
+.aic-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    background: transparent;
+}
+
+.aic-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.aic-logo {
+    background: #1f7a63;
+    color: white;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.aic-brand {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+}
+
+.aic-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.aic-nav-link {
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.aic-nav-link:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.aic-nav-link.active {
+    background: #1f7a63;
+    color: white;
+    font-weight: 600;
+}
+
+/* ── BANNER ── */
+.aic-banner {
+    background: linear-gradient(160deg, #1a2f2b, #0d1f1c);
+    color: white;
+    border-radius: 20px;
+    padding: 48px 52px;
+    margin: 8px 48px 36px;
+    min-height: 180px;
+}
+
+.aic-banner-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    opacity: 0.55;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.aic-banner-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.aic-banner-sub {
+    font-size: 14px;
+    opacity: 0.65;
+    max-width: 540px;
+    line-height: 1.6;
+}
+
+/* ── BODY ── */
+.aic-body {
+    padding: 0 48px 60px;
+}
+
+/* ── STAT CARDS ── */
+.aic-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.aic-stat-card {
+    flex: 1;
+    background: white;
+    border-radius: 18px;
+    padding: 28px 26px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.aic-stat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #1f7a63;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.aic-stat-big {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.aic-stat-num {
+    font-size: 52px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.aic-stat-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* ── RECOMMENDATIONS ── */
+.aic-recommendations {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 40px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.aic-rec-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #1f7a63;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.aic-rec-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+}
+
+/* ── REC CARDS ── */
+.aic-rec-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.aic-rec-card {
+    border: 1px solid #efefef;
+    border-radius: 14px;
+    padding: 22px 24px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background: #fafafa;
+}
+
+.aic-rec-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+    transform: translateY(-1px);
+    background: white;
+}
+
+.aic-rec-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.aic-rec-card-summary {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.aic-rec-card-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* BADGES */
+.aic-badge {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+.aic-badge-dev {
+    background: #e6f4ef;
+    color: #1f7a63;
+}
+
+.aic-badge-design {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.aic-badge-career {
+    background: #fff4cc;
+    color: #ca8a04;
+}
+
+.aic-badge-high {
+    background: #fde2e2;
+    color: #dc2626;
+}
+
+.aic-badge-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.aic-badge-low {
+    background: #e0f2fe;
+    color: #0369a1;
+}

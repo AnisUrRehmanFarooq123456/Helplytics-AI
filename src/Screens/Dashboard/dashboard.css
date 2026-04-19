@@ -1,0 +1,555 @@
+/* ═══════════════════════════════════════════════════
+   dashboard.css  —  pixel-perfect match to image
+   Save to: src/Screens/Dashboard/dashboard.css
+═══════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── PAGE: warm cream-to-sage gradient ── */
+.db-page {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #f3ede5 0%, #e9f0ea 50%, #f1eadf 100%);
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #111;
+}
+
+/* ════════════════════════════
+   NAVBAR  — white, sticky, compact
+════════════════════════════ */
+.db-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 28px;
+    background: #ffffff;
+    border-bottom: 1px solid #ebebeb;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+/* left side */
+.db-nav-l {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* green square logo */
+.db-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: #1b6e56;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+/* "HelpHub AI" */
+.db-brand {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #111;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+/* nav links row */
+.db-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.db-nl {
+    padding: 5px 11px;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.db-nl:hover {
+    background: #f3f3f3;
+}
+
+/* Dashboard active — subtle green underline pill */
+.db-nl.active {
+    color: #1b6e56;
+    font-weight: 600;
+    background: #e6f2ec;
+}
+
+/* right side */
+.db-nav-r {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Notifications text link */
+.db-notif-link {
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.db-notif-link:hover {
+    color: #111;
+}
+
+.db-notif-pip {
+    background: #dc2626;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 1px 5px;
+    line-height: 1.4;
+}
+
+/* "Open AI Center" green pill */
+.db-ai-btn {
+    padding: 7px 14px;
+    border-radius: 18px;
+    border: none;
+    background: #1b6e56;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+}
+
+.db-ai-btn:hover {
+    opacity: 0.85;
+}
+
+/* Logout — plain bordered */
+.db-logout-btn {
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    background: transparent;
+    color: #777;
+    font-size: 11.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+}
+
+.db-logout-btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+    border-color: #fca5a5;
+}
+
+/* ════════════════════════════
+   CONTENT WRAPPER
+════════════════════════════ */
+.db-content {
+    padding: 20px 28px 48px;
+}
+
+/* ════════════════════════════
+   WELCOME BANNER — dark green card
+════════════════════════════ */
+.db-banner {
+    background: linear-gradient(155deg, #0b3b36 0%, #072c28 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 30px 32px 28px;
+    margin-bottom: 18px;
+}
+
+.db-banner-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.5;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.db-banner-h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+    line-height: 1.15;
+}
+
+.db-banner-sub {
+    font-size: 12px;
+    opacity: 0.6;
+    line-height: 1.55;
+    max-width: 500px;
+}
+
+/* ════════════════════════════
+   4 STAT CARDS
+════════════════════════════ */
+.db-stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.db-stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 14px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+.db-stat-lbl {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    color: #aaa;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.db-stat-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+    line-height: 1;
+}
+
+.db-stat-desc {
+    font-size: 10.5px;
+    color: #999;
+    line-height: 1.4;
+}
+
+/* ════════════════════════════
+   MAIN 2-COLUMN LAYOUT
+════════════════════════════ */
+.db-main {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+/* ── LEFT COLUMN ── */
+.db-left {
+    flex: 1.5;
+}
+
+.db-left-hdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+/* "RECENT REQUESTS" / "AI INSIGHTS" small green label */
+.db-eyebrow {
+    display: block;
+    font-size: 8.5px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.db-left-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+
+/* "Go to feed" small button */
+.db-go-btn {
+    background: #f0f4f2;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 9px;
+    font-size: 11.5px;
+    cursor: pointer;
+    text-align: center;
+    color: #333;
+    line-height: 1.3;
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.db-go-btn:hover {
+    background: #ddeee6;
+}
+
+/* ── REQUEST CARD LIST — vertical ── */
+.db-req-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.db-req-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.db-req-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+/* badge row */
+.db-badges {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.db-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* badge colour classes */
+.b-dev {
+    background: #daeee5;
+    color: #1b6e56;
+}
+
+.b-design {
+    background: #ece8fc;
+    color: #5b21b6;
+}
+
+.b-career {
+    background: #fef5cc;
+    color: #a16207;
+}
+
+.b-high {
+    background: #fde2e2;
+    color: #b91c1c;
+}
+
+.b-med {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.b-low {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.b-open {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.b-solved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.db-req-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.3;
+}
+
+.db-req-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.db-req-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.db-req-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #ececec;
+    color: #444;
+}
+
+/* footer row inside card */
+.db-req-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.db-req-meta {
+    font-size: 10.5px;
+    color: #aaa;
+}
+
+/* "Open details" text button */
+.db-open-btn {
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1b6e56;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.db-open-btn:hover {
+    text-decoration: underline;
+}
+
+/* ── RIGHT COLUMN ── */
+.db-right {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ── AI INSIGHTS PANEL ── */
+.db-ai-panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+.db-ai-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 13px;
+    margin-top: 4px;
+}
+
+.db-ai-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 9px 0;
+    border-bottom: 1px solid #f2f2f2;
+    gap: 10px;
+}
+
+.db-ai-row-last {
+    border-bottom: none;
+}
+
+.db-ai-lbl {
+    font-size: 11px;
+    color: #999;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.db-ai-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: #111;
+    text-align: right;
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* ── NOTIFICATIONS PREVIEW PANEL ── */
+.db-notif-panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.db-notif-item {
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 9px;
+    padding: 10px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.db-notif-text {
+    font-size: 11.5px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.db-notif-time {
+    font-size: 10px;
+    color: #bbb;
+}
+
+.db-notif-badge {
+    border: none;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: opacity 0.15s;
+}
+
+.db-notif-badge:hover {
+    opacity: 0.8;
+}
+
+.db-notif-badge.unread {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.db-notif-badge.read {
+    background: #e4f0eb;
+    color: #1b6e56;
+}

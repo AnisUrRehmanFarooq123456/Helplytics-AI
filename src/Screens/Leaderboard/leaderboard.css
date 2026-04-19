@@ -1,0 +1,621 @@
+/* leaderboard.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.lb-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f4efe6, #e7efe9);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.lb-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background: white;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.lb-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lb-logo {
+    background: #1f7a63;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.lb-brand {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+}
+
+.lb-links {
+    display: flex;
+    gap: 4px;
+    margin-left: 20px;
+}
+
+.lb-link {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #444;
+    transition: background 0.2s;
+}
+
+.lb-link:hover {
+    background: #f0f0f0;
+}
+
+.lb-link.active {
+    background: #e4efe9;
+    color: #1f7a63;
+    font-weight: 600;
+}
+
+.lb-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lb-ai-btn {
+    background: #1f7a63;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.lb-ai-btn:hover {
+    opacity: 0.85;
+}
+
+/* BODY */
+.lb-body {
+    padding: 30px 40px;
+}
+
+.lb-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lb-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #059669;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.lb-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.lb-sub {
+    font-size: 14px;
+    color: #888;
+}
+
+/* PODIUM */
+.lb-podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.lb-podium-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.lb-podium-avatar {
+    width: 52px;
+    height: 52px;
+    background: #1f7a63;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 22px;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lb-podium-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+}
+
+.lb-podium-score {
+    font-size: 12px;
+    color: #888;
+}
+
+.lb-podium-block {
+    width: 100px;
+    background: linear-gradient(180deg, #1f7a63, #0b3b36);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lb-podium-rank {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* TABLE */
+.lb-table-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    overflow-x: auto;
+}
+
+.lb-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lb-table th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.lb-table td {
+    padding: 14px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.lb-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lb-top-row {
+    background: #f9fdf9;
+}
+
+.lb-rank-badge {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: #f0f0f0;
+    color: #555;
+}
+
+.rank-1 {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.rank-2 {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.rank-3 {
+    background: #fde8d8;
+    color: #9a3412;
+}
+
+.lb-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lb-user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #1f7a63;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.lb-role-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #e4efe9;
+    color: #1f7a63;
+    font-weight: 500;
+}
+
+.lb-location {
+    color: #888;
+    font-size: 13px;
+}
+
+.lb-score-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lb-score-fill {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #1f7a63, #24b2a2);
+}
+
+.lb-solved {
+    font-weight: 600;
+    color: #1f7a63;
+}
+
+.lb-badges-cell {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.lb-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+/* leaderboard.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.lb-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f4efe6, #e7efe9);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.lb-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background: white;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.lb-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lb-logo {
+    background: #1f7a63;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.lb-brand {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+}
+
+.lb-links {
+    display: flex;
+    gap: 4px;
+    margin-left: 20px;
+}
+
+.lb-link {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #444;
+    transition: background 0.2s;
+}
+
+.lb-link:hover {
+    background: #f0f0f0;
+}
+
+.lb-link.active {
+    background: #e4efe9;
+    color: #1f7a63;
+    font-weight: 600;
+}
+
+.lb-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lb-ai-btn {
+    background: #1f7a63;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.lb-ai-btn:hover {
+    opacity: 0.85;
+}
+
+/* BODY */
+.lb-body {
+    padding: 30px 40px;
+}
+
+.lb-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lb-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #059669;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.lb-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.lb-sub {
+    font-size: 14px;
+    color: #888;
+}
+
+/* PODIUM */
+.lb-podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.lb-podium-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.lb-podium-avatar {
+    width: 52px;
+    height: 52px;
+    background: #1f7a63;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 22px;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lb-podium-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+}
+
+.lb-podium-score {
+    font-size: 12px;
+    color: #888;
+}
+
+.lb-podium-block {
+    width: 100px;
+    background: linear-gradient(180deg, #1f7a63, #0b3b36);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lb-podium-rank {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* TABLE */
+.lb-table-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    overflow-x: auto;
+}
+
+.lb-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lb-table th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.lb-table td {
+    padding: 14px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.lb-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lb-top-row {
+    background: #f9fdf9;
+}
+
+.lb-rank-badge {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: #f0f0f0;
+    color: #555;
+}
+
+.rank-1 {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.rank-2 {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.rank-3 {
+    background: #fde8d8;
+    color: #9a3412;
+}
+
+.lb-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lb-user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #1f7a63;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.lb-role-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #e4efe9;
+    color: #1f7a63;
+    font-weight: 500;
+}
+
+.lb-location {
+    color: #888;
+    font-size: 13px;
+}
+
+.lb-score-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lb-score-fill {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #1f7a63, #24b2a2);
+}
+
+.lb-solved {
+    font-weight: 600;
+    color: #1f7a63;
+}
+
+.lb-badges-cell {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.lb-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: #ede9fe;
+    color: #5b21b6;
+}
